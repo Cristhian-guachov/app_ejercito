@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict S2fOs1brkvgy8uZ0PMShdSMcqFHKhx00rLJat4TKKE8iXAQmKPd0WvI0oBjwLun
+\restrict EQEKda7J9aZHNLySqJoXq8Qu5sgrx1f9ZmWvVCh5LRlNwtqpgcQPeaibGuhc79I
 
 -- Dumped from database version 17.7
 -- Dumped by pg_dump version 17.7
@@ -567,7 +567,7 @@ COPY public.personal (id, nombre, apellido, tipo_arma, grado, cedula, activo) FR
 --
 
 COPY public.usuarios (id, usuario, password, rol) FROM stdin;
-1	admin	$2b$10$iUXlvcvc4JXCkGloGC4yVefdp50fhVRe0nOBZIHtShONqCbmxMbeK	Administrador
+1	cristhian	$2b$10$iUXlvcvc4JXCkGloGC4yVefdp50fhVRe0nOBZIHtShONqCbmxMbeK	Administrador
 \.
 
 
@@ -767,5 +767,5 @@ ALTER TABLE ONLY public.inventario_mal_estado
 -- PostgreSQL database dump complete
 --
 
-\unrestrict S2fOs1brkvgy8uZ0PMShdSMcqFHKhx00rLJat4TKKE8iXAQmKPd0WvI0oBjwLun
+\unrestrict EQEKda7J9aZHNLySqJoXq8Qu5sgrx1f9ZmWvVCh5LRlNwtqpgcQPeaibGuhc79I
 
