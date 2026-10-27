@@ -2,11 +2,12 @@ import React from 'react';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { FaFilePdf, FaUsers, FaArrowCircleRight } from 'react-icons/fa';
+import API_URL from '../config/api';
 
 const ReportesGenerales = () => {
   const generarReportePedidos = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/pedidos');
+      const res = await fetch(`${API_URL}/api/pedidos`);
       const pedidos = await res.json();
 
       const doc = new jsPDF();
@@ -51,7 +52,7 @@ const ReportesGenerales = () => {
 
   const generarReporteMovimientos = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/movimientos');
+      const res = await fetch(`${API_URL}/api/movimientos`);
       const movimientos = await res.json();
 
       const doc = new jsPDF();

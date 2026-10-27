@@ -5,6 +5,7 @@ import {
     FaLayerGroup,
     FaClipboardList
 } from 'react-icons/fa';
+import API_URL from '../config/api';
 
 function Inventario() {
     const [nombreMaterial, setNombreMaterial] = useState('');
@@ -22,7 +23,7 @@ function Inventario() {
 
         try {
             const respuesta = await fetch(
-                'http://localhost:3000/api/guardar-bodega',
+                `${API_URL}/api/guardar-bodega`,
                 {
                     method: 'POST',
                     headers: {

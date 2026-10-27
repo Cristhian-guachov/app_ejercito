@@ -19,6 +19,7 @@ import {
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 import logoGiron from "../assets/logo_giron.png";
+import API_URL from "../config/api";
 
 
 
@@ -41,8 +42,8 @@ function HistorialEntregas() {
     const cargarHistorial = async () => {
         try {
             const url = esPersonal && cedulaMilitar
-                ? `http://localhost:3000/api/historial-entregas?cedula=${encodeURIComponent(cedulaMilitar)}`
-                : 'http://localhost:3000/api/historial-entregas';
+                ? `${API_URL}/api/historial-entregas?cedula=${encodeURIComponent(cedulaMilitar)}`
+                : `${API_URL}/api/historial-entregas`;
 
             const res = await fetch(url);
             const data = await res.json();
@@ -633,7 +634,7 @@ function HistorialEntregas() {
     } else {
         try {
             const res = await fetch(
-                `http://localhost:3000/api/devoluciones/entrega/${item.entrega_id}`
+                `${API_URL}/api/devoluciones/entrega/${item.entrega_id}`
             );
 
             if (res.ok) {
@@ -1028,7 +1029,7 @@ function HistorialEntregas() {
             return;
         }
         try {
-            const res = await fetch('http://localhost:3000/api/devoluciones', {
+            const res = await fetch(`${API_URL}/api/devoluciones`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -1064,7 +1065,7 @@ function HistorialEntregas() {
         if (!confirmacion) return;
 
         try {
-            const res = await fetch(`http://localhost:3000/api/entregas/detalle/${item.detalle_id}`, {
+            const res = await fetch(`${API_URL}/api/entregas/detalle/${item.detalle_id}`, {
                 method: "DELETE"
             });
             const data = await res.json();

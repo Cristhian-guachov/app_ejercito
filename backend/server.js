@@ -47,15 +47,10 @@ app.use('/api', pedidosRoutes);
 app.use('/api', malEstadoRoutes);
 // ======================================
 
-app.listen(3000, async ()=>{
+const PORT = process.env.PORT || 3000;
 
-    console.log(
-
-        'Servidor ejecutándose en puerto 3000'
-
-    );
-
+app.listen(PORT, async () => {
+    console.log(`Servidor ejecutándose en puerto ${PORT}`);
     // Encriptar contraseñas existentes
     await checkAndHashPasswords();
-
 });

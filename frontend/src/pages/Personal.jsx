@@ -6,6 +6,7 @@ import {
     FaUser,
     FaCrosshairs
 } from 'react-icons/fa';
+import API_URL from '../config/api';
 
 function Personal() {
     const [formulario, setFormulario] = useState({
@@ -42,7 +43,7 @@ function Personal() {
 
         try {
             const respuesta = await fetch(
-                'http://localhost:3000/api/guardar-personal',
+                `${API_URL}/api/guardar-personal`,
                 {
                     method: 'POST',
                     headers: {

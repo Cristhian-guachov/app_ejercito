@@ -11,6 +11,7 @@ import {
     FaCheckCircle,
     FaTimesCircle
 } from 'react-icons/fa';
+import API_URL from '../config/api';
 
 function TablaPersonal() {
     const [personal, setPersonal] = useState([]);
@@ -30,7 +31,7 @@ function TablaPersonal() {
     const cargarPersonal = async () => {
         try {
             const respuesta = await fetch(
-                'http://localhost:3000/api/listar-personal'
+                `${API_URL}/api/listar-personal`
             );
             const data = await respuesta.json();
             setPersonal(data);
@@ -52,7 +53,7 @@ function TablaPersonal() {
 
         try {
             const respuesta = await fetch(
-                `http://localhost:3000/api/eliminar-personal/${cedula}`,
+                `${API_URL}/api/eliminar-personal/${cedula}`,
                 {
                     method: 'DELETE'
                 }
@@ -85,7 +86,7 @@ function TablaPersonal() {
     const actualizarPersonal = async (cedula) => {
         try {
             const respuesta = await fetch(
-                `http://localhost:3000/api/actualizar-personal/${cedula}`,
+                `${API_URL}/api/actualizar-personal/${cedula}`,
                 {
                     method: 'PUT',
                     headers: {
@@ -110,7 +111,7 @@ function TablaPersonal() {
         const nuevoEstado = !persona.activo;
         try {
             const respuesta = await fetch(
-                `http://localhost:3000/api/cambiar-estado-personal/${persona.cedula}`,
+                `${API_URL}/api/cambiar-estado-personal/${persona.cedula}`,
                 {
                     method: 'PATCH',
                     headers: {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaExclamationTriangle } from "react-icons/fa";
+import API_URL from "../config/api";
 
 function MalEstado() {
   const [data, setData] = useState([]);
@@ -7,7 +8,7 @@ function MalEstado() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/mal-estado")
+    fetch(`${API_URL}/api/mal-estado`)
       .then((res) => {
         if (!res.ok) throw new Error("Network response was not ok");
         return res.json();

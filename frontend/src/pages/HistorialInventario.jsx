@@ -9,6 +9,7 @@ import {
     FaArrowUp,
     FaArrowDown
 } from "react-icons/fa";
+import API_URL from "../config/api";
 
 function HistorialInventario() {
     const [historial, setHistorial] = useState([]);
@@ -21,7 +22,7 @@ function HistorialInventario() {
     const cargarHistorial = async () => {
         try {
             const res = await fetch(
-                "http://localhost:3000/api/historial-inventario"
+                `${API_URL}/api/historial-inventario`
             );
             const data = await res.json();
             setHistorial(data);

@@ -13,6 +13,7 @@ import {
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 import logoGiron from "../assets/logo_giron.png";
+import API_URL from "../config/api";
 
 
 function EntregaMaterial() {
@@ -43,7 +44,7 @@ function EntregaMaterial() {
 
     const cargarPersonal = async () => {
         try {
-            const res = await fetch("http://localhost:3000/api/personal");
+            const res = await fetch(`${API_URL}/api/personal`);
             const data = await res.json();
             setPersonal(data);
         } catch (error) {
@@ -53,7 +54,7 @@ function EntregaMaterial() {
 
     const cargarInventario = async () => {
         try {
-            const res = await fetch("http://localhost:3000/api/inventario");
+            const res = await fetch(`${API_URL}/api/inventario`);
             const data = await res.json();
             setInventario(data);
         } catch (error) {
@@ -370,7 +371,7 @@ const generarPDFPedido = (datos) => {
 
         try {
             const res = await fetch(
-                "http://localhost:3000/api/entregas",
+                `${API_URL}/api/entregas`,
                 {
                     method: "POST",
                     headers: {

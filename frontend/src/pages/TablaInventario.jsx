@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import logoGiron from '../assets/logo_giron.png';
+import API_URL from '../config/api';
 import {
     FaEdit,
     FaTrash,
@@ -52,7 +53,7 @@ function TablaInventario() {
 
         try {
             const respuesta = await fetch(
-                `http://localhost:3000/api/ajustar-inventario/${itemSeleccionado.id}`,
+                `${API_URL}/api/ajustar-inventario/${itemSeleccionado.id}`,
                 {
                     method: 'POST',
                     headers: {
@@ -85,7 +86,7 @@ function TablaInventario() {
     const cargarInventario = async () => {
         try {
             const respuesta = await fetch(
-                'http://localhost:3000/api/listar-bodega'
+                `${API_URL}/api/listar-bodega`
             );
             const data = await respuesta.json();
             setInventario(data);
@@ -107,7 +108,7 @@ function TablaInventario() {
 
         try {
             const respuesta = await fetch(
-                `http://localhost:3000/api/eliminar-bodega/${id}`,
+                `${API_URL}/api/eliminar-bodega/${id}`,
                 {
                     method: 'DELETE'
                 }
@@ -138,7 +139,7 @@ function TablaInventario() {
     const actualizarInventario = async (id) => {
         try {
             const respuesta = await fetch(
-                `http://localhost:3000/api/actualizar-bodega/${id}`,
+                `${API_URL}/api/actualizar-bodega/${id}`,
                 {
                     method: 'PUT',
                     headers: {
