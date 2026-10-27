@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict EQEKda7J9aZHNLySqJoXq8Qu5sgrx1f9ZmWvVCh5LRlNwtqpgcQPeaibGuhc79I
+\restrict WaWOkwFoxG2Bia4j1sou40YikMGE3QIm7qucehsG1zCYcXhiH64wx14cAxLB4dI
 
 -- Dumped from database version 17.7
 -- Dumped by pg_dump version 17.7
@@ -65,7 +65,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: detalle_entrega; Type: TABLE; Schema: public; Owner: postgres
+-- Name: detalle_entrega; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.detalle_entrega (
@@ -77,10 +77,8 @@ CREATE TABLE public.detalle_entrega (
 );
 
 
-ALTER TABLE public.detalle_entrega OWNER TO postgres;
-
 --
--- Name: detalle_entrega_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: detalle_entrega_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.detalle_entrega_id_seq
@@ -92,17 +90,15 @@ CREATE SEQUENCE public.detalle_entrega_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.detalle_entrega_id_seq OWNER TO postgres;
-
 --
--- Name: detalle_entrega_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: detalle_entrega_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.detalle_entrega_id_seq OWNED BY public.detalle_entrega.id;
 
 
 --
--- Name: devoluciones; Type: TABLE; Schema: public; Owner: postgres
+-- Name: devoluciones; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.devoluciones (
@@ -114,10 +110,8 @@ CREATE TABLE public.devoluciones (
 );
 
 
-ALTER TABLE public.devoluciones OWNER TO postgres;
-
 --
--- Name: devoluciones_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: devoluciones_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.devoluciones_id_seq
@@ -129,17 +123,15 @@ CREATE SEQUENCE public.devoluciones_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.devoluciones_id_seq OWNER TO postgres;
-
 --
--- Name: devoluciones_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: devoluciones_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.devoluciones_id_seq OWNED BY public.devoluciones.id;
 
 
 --
--- Name: entregas; Type: TABLE; Schema: public; Owner: postgres
+-- Name: entregas; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.entregas (
@@ -150,10 +142,8 @@ CREATE TABLE public.entregas (
 );
 
 
-ALTER TABLE public.entregas OWNER TO postgres;
-
 --
--- Name: entregas_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: entregas_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.entregas_id_seq
@@ -165,17 +155,15 @@ CREATE SEQUENCE public.entregas_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.entregas_id_seq OWNER TO postgres;
-
 --
--- Name: entregas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: entregas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.entregas_id_seq OWNED BY public.entregas.id;
 
 
 --
--- Name: historial_cambios_inventario; Type: TABLE; Schema: public; Owner: postgres
+-- Name: historial_cambios_inventario; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.historial_cambios_inventario (
@@ -190,10 +178,8 @@ CREATE TABLE public.historial_cambios_inventario (
 );
 
 
-ALTER TABLE public.historial_cambios_inventario OWNER TO postgres;
-
 --
--- Name: historial_cambios_inventario_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: historial_cambios_inventario_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.historial_cambios_inventario_id_seq
@@ -205,17 +191,15 @@ CREATE SEQUENCE public.historial_cambios_inventario_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.historial_cambios_inventario_id_seq OWNER TO postgres;
-
 --
--- Name: historial_cambios_inventario_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: historial_cambios_inventario_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.historial_cambios_inventario_id_seq OWNED BY public.historial_cambios_inventario.id;
 
 
 --
--- Name: inventario; Type: TABLE; Schema: public; Owner: postgres
+-- Name: inventario; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.inventario (
@@ -226,10 +210,8 @@ CREATE TABLE public.inventario (
 );
 
 
-ALTER TABLE public.inventario OWNER TO postgres;
-
 --
--- Name: inventario_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: inventario_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.inventario_id_seq
@@ -241,17 +223,15 @@ CREATE SEQUENCE public.inventario_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.inventario_id_seq OWNER TO postgres;
-
 --
--- Name: inventario_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: inventario_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.inventario_id_seq OWNED BY public.inventario.id;
 
 
 --
--- Name: inventario_mal_estado; Type: TABLE; Schema: public; Owner: postgres
+-- Name: inventario_mal_estado; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.inventario_mal_estado (
@@ -264,10 +244,8 @@ CREATE TABLE public.inventario_mal_estado (
 );
 
 
-ALTER TABLE public.inventario_mal_estado OWNER TO postgres;
-
 --
--- Name: inventario_mal_estado_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: inventario_mal_estado_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.inventario_mal_estado_id_seq
@@ -279,17 +257,15 @@ CREATE SEQUENCE public.inventario_mal_estado_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.inventario_mal_estado_id_seq OWNER TO postgres;
-
 --
--- Name: inventario_mal_estado_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: inventario_mal_estado_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.inventario_mal_estado_id_seq OWNED BY public.inventario_mal_estado.id;
 
 
 --
--- Name: personal; Type: TABLE; Schema: public; Owner: postgres
+-- Name: personal; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.personal (
@@ -303,10 +279,8 @@ CREATE TABLE public.personal (
 );
 
 
-ALTER TABLE public.personal OWNER TO postgres;
-
 --
--- Name: personal_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: personal_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.personal_id_seq
@@ -318,17 +292,15 @@ CREATE SEQUENCE public.personal_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.personal_id_seq OWNER TO postgres;
-
 --
--- Name: personal_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: personal_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.personal_id_seq OWNED BY public.personal.id;
 
 
 --
--- Name: usuarios; Type: TABLE; Schema: public; Owner: postgres
+-- Name: usuarios; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.usuarios (
@@ -339,10 +311,8 @@ CREATE TABLE public.usuarios (
 );
 
 
-ALTER TABLE public.usuarios OWNER TO postgres;
-
 --
--- Name: usuarios_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: usuarios_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.usuarios_id_seq
@@ -354,73 +324,71 @@ CREATE SEQUENCE public.usuarios_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.usuarios_id_seq OWNER TO postgres;
-
 --
--- Name: usuarios_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: usuarios_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.usuarios_id_seq OWNED BY public.usuarios.id;
 
 
 --
--- Name: detalle_entrega id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: detalle_entrega id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.detalle_entrega ALTER COLUMN id SET DEFAULT nextval('public.detalle_entrega_id_seq'::regclass);
 
 
 --
--- Name: devoluciones id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: devoluciones id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.devoluciones ALTER COLUMN id SET DEFAULT nextval('public.devoluciones_id_seq'::regclass);
 
 
 --
--- Name: entregas id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: entregas id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.entregas ALTER COLUMN id SET DEFAULT nextval('public.entregas_id_seq'::regclass);
 
 
 --
--- Name: historial_cambios_inventario id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: historial_cambios_inventario id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.historial_cambios_inventario ALTER COLUMN id SET DEFAULT nextval('public.historial_cambios_inventario_id_seq'::regclass);
 
 
 --
--- Name: inventario id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: inventario id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.inventario ALTER COLUMN id SET DEFAULT nextval('public.inventario_id_seq'::regclass);
 
 
 --
--- Name: inventario_mal_estado id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: inventario_mal_estado id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.inventario_mal_estado ALTER COLUMN id SET DEFAULT nextval('public.inventario_mal_estado_id_seq'::regclass);
 
 
 --
--- Name: personal id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: personal id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.personal ALTER COLUMN id SET DEFAULT nextval('public.personal_id_seq'::regclass);
 
 
 --
--- Name: usuarios id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: usuarios id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.usuarios ALTER COLUMN id SET DEFAULT nextval('public.usuarios_id_seq'::regclass);
 
 
 --
--- Data for Name: detalle_entrega; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: detalle_entrega; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.detalle_entrega (id, entrega_id, inventario_id, cantidad, cantidad_devuelta) FROM stdin;
@@ -444,7 +412,7 @@ COPY public.detalle_entrega (id, entrega_id, inventario_id, cantidad, cantidad_d
 
 
 --
--- Data for Name: devoluciones; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: devoluciones; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.devoluciones (id, detalle_entrega_id, cantidad_devuelta, causa, fecha_devolucion) FROM stdin;
@@ -469,7 +437,7 @@ COPY public.devoluciones (id, detalle_entrega_id, cantidad_devuelta, causa, fech
 
 
 --
--- Data for Name: entregas; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: entregas; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.entregas (id, cedula, fecha_entrega, observaciones) FROM stdin;
@@ -490,7 +458,7 @@ COPY public.entregas (id, cedula, fecha_entrega, observaciones) FROM stdin;
 
 
 --
--- Data for Name: historial_cambios_inventario; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: historial_cambios_inventario; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.historial_cambios_inventario (id, inventario_id, nombre_material, cantidad_anterior, cantidad_nueva, diferencia, motivo, fecha_cambio) FROM stdin;
@@ -504,7 +472,7 @@ COPY public.historial_cambios_inventario (id, inventario_id, nombre_material, ca
 
 
 --
--- Data for Name: inventario; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: inventario; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.inventario (id, nombre_material, tipo_material, cantidad) FROM stdin;
@@ -525,7 +493,7 @@ COPY public.inventario (id, nombre_material, tipo_material, cantidad) FROM stdin
 
 
 --
--- Data for Name: inventario_mal_estado; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: inventario_mal_estado; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.inventario_mal_estado (id, devolucion_id, nombre_material, cantidad, fecha_registro, entrega_id) FROM stdin;
@@ -538,7 +506,7 @@ COPY public.inventario_mal_estado (id, devolucion_id, nombre_material, cantidad,
 
 
 --
--- Data for Name: personal; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: personal; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.personal (id, nombre, apellido, tipo_arma, grado, cedula, activo) FROM stdin;
@@ -563,7 +531,7 @@ COPY public.personal (id, nombre, apellido, tipo_arma, grado, cedula, activo) FR
 
 
 --
--- Data for Name: usuarios; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: usuarios; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.usuarios (id, usuario, password, rol) FROM stdin;
@@ -572,63 +540,63 @@ COPY public.usuarios (id, usuario, password, rol) FROM stdin;
 
 
 --
--- Name: detalle_entrega_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: detalle_entrega_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.detalle_entrega_id_seq', 16, true);
 
 
 --
--- Name: devoluciones_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: devoluciones_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.devoluciones_id_seq', 17, true);
 
 
 --
--- Name: entregas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: entregas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.entregas_id_seq', 13, true);
 
 
 --
--- Name: historial_cambios_inventario_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: historial_cambios_inventario_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.historial_cambios_inventario_id_seq', 6, true);
 
 
 --
--- Name: inventario_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: inventario_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.inventario_id_seq', 335, true);
 
 
 --
--- Name: inventario_mal_estado_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: inventario_mal_estado_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.inventario_mal_estado_id_seq', 5, true);
 
 
 --
--- Name: personal_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: personal_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.personal_id_seq', 29, true);
 
 
 --
--- Name: usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.usuarios_id_seq', 1, true);
 
 
 --
--- Name: detalle_entrega detalle_entrega_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: detalle_entrega detalle_entrega_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.detalle_entrega
@@ -636,7 +604,7 @@ ALTER TABLE ONLY public.detalle_entrega
 
 
 --
--- Name: devoluciones devoluciones_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: devoluciones devoluciones_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.devoluciones
@@ -644,7 +612,7 @@ ALTER TABLE ONLY public.devoluciones
 
 
 --
--- Name: entregas entregas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: entregas entregas_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.entregas
@@ -652,7 +620,7 @@ ALTER TABLE ONLY public.entregas
 
 
 --
--- Name: historial_cambios_inventario historial_cambios_inventario_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: historial_cambios_inventario historial_cambios_inventario_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.historial_cambios_inventario
@@ -660,7 +628,7 @@ ALTER TABLE ONLY public.historial_cambios_inventario
 
 
 --
--- Name: inventario_mal_estado inventario_mal_estado_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: inventario_mal_estado inventario_mal_estado_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.inventario_mal_estado
@@ -668,7 +636,7 @@ ALTER TABLE ONLY public.inventario_mal_estado
 
 
 --
--- Name: inventario inventario_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: inventario inventario_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.inventario
@@ -676,7 +644,7 @@ ALTER TABLE ONLY public.inventario
 
 
 --
--- Name: personal personal_cedula_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: personal personal_cedula_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.personal
@@ -684,7 +652,7 @@ ALTER TABLE ONLY public.personal
 
 
 --
--- Name: personal personal_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: personal personal_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.personal
@@ -692,7 +660,7 @@ ALTER TABLE ONLY public.personal
 
 
 --
--- Name: usuarios usuarios_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: usuarios usuarios_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.usuarios
@@ -700,7 +668,7 @@ ALTER TABLE ONLY public.usuarios
 
 
 --
--- Name: usuarios usuarios_usuario_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: usuarios usuarios_usuario_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.usuarios
@@ -708,7 +676,7 @@ ALTER TABLE ONLY public.usuarios
 
 
 --
--- Name: devoluciones devoluciones_detalle_entrega_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: devoluciones devoluciones_detalle_entrega_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.devoluciones
@@ -716,7 +684,7 @@ ALTER TABLE ONLY public.devoluciones
 
 
 --
--- Name: detalle_entrega fk_detalle_entrega; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: detalle_entrega fk_detalle_entrega; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.detalle_entrega
@@ -724,7 +692,7 @@ ALTER TABLE ONLY public.detalle_entrega
 
 
 --
--- Name: detalle_entrega fk_detalle_inventario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: detalle_entrega fk_detalle_inventario; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.detalle_entrega
@@ -732,7 +700,7 @@ ALTER TABLE ONLY public.detalle_entrega
 
 
 --
--- Name: entregas fk_entrega_personal; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: entregas fk_entrega_personal; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.entregas
@@ -740,7 +708,7 @@ ALTER TABLE ONLY public.entregas
 
 
 --
--- Name: historial_cambios_inventario historial_cambios_inventario_inventario_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: historial_cambios_inventario historial_cambios_inventario_inventario_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.historial_cambios_inventario
@@ -748,7 +716,7 @@ ALTER TABLE ONLY public.historial_cambios_inventario
 
 
 --
--- Name: inventario_mal_estado inventario_mal_estado_devolucion_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: inventario_mal_estado inventario_mal_estado_devolucion_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.inventario_mal_estado
@@ -756,7 +724,7 @@ ALTER TABLE ONLY public.inventario_mal_estado
 
 
 --
--- Name: inventario_mal_estado inventario_mal_estado_entrega_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: inventario_mal_estado inventario_mal_estado_entrega_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.inventario_mal_estado
@@ -767,5 +735,5 @@ ALTER TABLE ONLY public.inventario_mal_estado
 -- PostgreSQL database dump complete
 --
 
-\unrestrict EQEKda7J9aZHNLySqJoXq8Qu5sgrx1f9ZmWvVCh5LRlNwtqpgcQPeaibGuhc79I
+\unrestrict WaWOkwFoxG2Bia4j1sou40YikMGE3QIm7qucehsG1zCYcXhiH64wx14cAxLB4dI
 
