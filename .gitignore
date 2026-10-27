@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Production builds
+dist/
+frontend/dist/
+
+# Environment variables & local configs
+.env
+*.local
+
+# Logs and JMeter results
+*.log
+*.jtl
+npm-debug.log*
+
+# JMeter installation binaries and backups (keep test plans .jmx)
+jmeter/lib/
+jmeter/licenses/
+jmeter/printable_docs/
+jmeter/backups/
+jmeter/docs/
+
+# Editor and AI tool directories
+.vscode/
+.idea/
+.gemini/
+.DS_Store
+Thumbs.db

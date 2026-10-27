@@ -1,0 +1,1321 @@
+/* ==========================================================================
+   MILITARY SYSTEM DESIGN SYSTEM - VANILLA CSS
+   Ejército Ecuatoriano — Comando Logístico No. 73 "Girón"
+   ========================================================================== */
+
+:root {
+  /* ── Paleta Militar Ecuatoriana ── */
+  /* Conchevino / Burdeos */
+  --bg-primary: #5E2530;       /* conchevino — fondo principal */
+  --bg-secondary: #3D181F;     /* burdeos profundo — contenido */
+  --bg-sidebar: #331520;       /* sidebar profundo */
+
+  /* Amarillo / Dorado */
+  --accent-gold: #E2B93B;      /* dorado institucional */
+  --accent-gold-hover: #D4A72E;/* dorado hover */
+  --accent-warm: #C89B28;      /* dorado cálido */
+  --accent-gold-rgb: 226, 185, 59;
+
+  /* Verde Oliva */
+  --accent-green: #3A7D44;     /* verde militar */
+  --accent-green-hover: #4A9254;/* verde hover */
+
+  /* Plateado */
+  --silver: #C0C0C0;           /* plata clásica */
+  --silver-light: #D8D8D8;     /* plata clara */
+  --silver-dark: #A0A0A0;      /* plata oscura */
+
+  /* Texto */
+  --text-primary: #F0EDE8;     /* blanco marfil */
+  --text-secondary: var(--silver-light);
+  --text-muted: var(--silver-dark);
+
+  /* Bordes con toque plateado */
+  --border-color: rgba(192, 192, 192, 0.12);
+  --border-hover: rgba(226, 185, 59, 0.3);
+
+  /* Legacy compat */
+  --accent: var(--accent-gold);
+  --accent-bg: rgba(226, 185, 59, 0.08);
+  --accent-border: rgba(192, 192, 192, 0.18);
+
+  /* Cards */
+  --card-bg: rgba(61, 24, 31, 0.7);
+  --card-bg-solid: #3D181F;
+
+  /* Status */
+  --success: #3A7D44;
+  --success-bg: rgba(58, 125, 68, 0.15);
+  --warning: #E2B93B;
+  --warning-bg: rgba(226, 185, 59, 0.12);
+  --danger: #c0392b;
+  --danger-bg: rgba(192, 57, 43, 0.15);
+  --info: #2980b9;
+  --info-bg: rgba(41, 128, 185, 0.15);
+
+  /* Elevation — sombras con toque dorado */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.65);
+  --glow-gold: 0 0 15px rgba(226, 185, 59, 0.2);
+  --glow-gold-strong: 0 0 25px rgba(226, 185, 59, 0.4);
+  --glow-silver: 0 0 12px rgba(192, 192, 192, 0.15);
+
+  /* Layout & Animations */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+
+  --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(253, 210, 47, 0.06) 0%, transparent 70%),
+    linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+  background-attachment: fixed;
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--silver-dark);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--silver);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   REUSABLE LAYOUT & COMPONENTS
+   ========================================================================== */
+
+.military-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.military-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.military-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-gold), var(--silver), var(--accent-gold), var(--accent-green));
+  opacity: 0.8;
+}
+
+.military-card:hover {
+  border-color: rgba(192, 192, 192, 0.2);
+  box-shadow: var(--shadow-lg), var(--glow-gold), var(--glow-silver);
+}
+
+/* Headers inside pages */
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.page-logo-container {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  background: rgba(114, 47, 55, 0.3);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent-gold);
+  font-size: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.military-card:hover .page-logo-container {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: var(--glow-gold);
+  color: var(--accent-gold-hover);
+}
+
+.page-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.page-title span {
+  color: var(--accent-gold);
+}
+
+.page-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   FORM CONTROLS
+   ========================================================================== */
+
+.military-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.military-label {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input-icon-wrapper:focus-within {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+.input-icon-wrapper svg {
+  position: absolute;
+  left: 18px;
+  color: var(--text-muted);
+  font-size: 18px;
+  transition: color var(--transition-fast);
+}
+
+.input-icon-wrapper:focus-within svg {
+  color: var(--accent-gold);
+}
+
+.military-input,
+.military-select,
+.military-textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 16px 16px 16px 54px;
+  color: var(--text-primary);
+  font-size: 16px;
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast);
+}
+
+.military-textarea {
+  padding-left: 16px;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.military-select option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 10px;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition-normal);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-green), var(--accent-green-hover));
+  color: var(--text-primary);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-green-hover), #5e8033);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), var(--glow-gold);
+  border-color: var(--accent-gold);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-hover));
+  color: #000;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: var(--text-primary);
+}
+
+.btn-danger:hover {
+  background: #e74c3c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: var(--radius-sm);
+  gap: 6px;
+}
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.search-wrapper {
+  max-width: 380px;
+  width: 100%;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  background: rgba(74, 30, 36, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.military-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.military-table th {
+  background: rgba(114, 47, 55, 0.35);
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-gold);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.military-table td {
+  padding: 16px 20px;
+  font-size: 15px;
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background var(--transition-fast);
+}
+
+.military-table tr:last-child td {
+  border-bottom: none;
+}
+
+.military-table tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.military-table tbody tr:nth-child(even) {
+  background-color: rgba(74, 30, 36, 0.15);
+}
+
+.military-table tbody tr:hover {
+  background-color: rgba(114, 47, 55, 0.25);
+  box-shadow: 0 0 10px var(--accent-gold);
+}
+
+/* Action Buttons inside Tables */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+}
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+}
+.styled-table thead {
+  background: rgba(114, 47, 55, 0.35);
+}
+.styled-table tbody tr:nth-child(even) {
+  background-color: rgba(74, 30, 36, 0.15);
+}
+.styled-table tbody tr:hover {
+  background-color: rgba(114, 47, 55, 0.25);
+  box-shadow: 0 0 8px var(--accent-gold);
+}
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all var(--transition-fast);
+}
+
+.action-btn-edit {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--accent-gold);
+}
+
+.action-btn-edit:hover {
+  background: var(--accent-gold);
+  color: #000;
+  box-shadow: 0 0 6px var(--glow-gold);
+}
+
+.action-btn-delete {
+  background: rgba(192, 57, 43, 0.15);
+  color: #ff7675;
+}
+
+.action-btn-delete:hover {
+  background: #c0392b;
+  color: #fff;
+}
+
+.action-btn-save {
+  background: rgba(39, 174, 96, 0.15);
+  color: #2ecc71;
+}
+
+.action-btn-save:hover {
+  background: #27ae60;
+  color: #fff;
+}
+
+/* Table inline inputs */
+.table-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.table-input:focus {
+  border-color: var(--accent-gold);
+}
+
+/* ==========================================================================
+   BADGES & ALERTS
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-info {
+  background: var(--info-bg);
+  color: #54a0ff;
+  border: 1px solid rgba(84, 160, 255, 0.2);
+}
+
+.badge-success {
+  background: var(--success-bg);
+  color: #2ecc71;
+  border: 1px solid rgba(46, 204, 113, 0.2);
+}
+
+.badge-warning {
+  background: var(--warning-bg);
+  color: #f39c12;
+  border: 1px solid rgba(243, 156, 18, 0.2);
+}
+
+.badge-danger {
+  background: var(--danger-bg);
+  color: #ff7675;
+  border: 1px solid rgba(255, 118, 117, 0.2);
+}
+
+/* ==========================================================================
+   INTERRUPTOR TÁCTICO (MILITARY TOGGLE SWITCH)
+   ========================================================================== */
+.military-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.military-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.military-switch-slider {
+  position: relative;
+  width: 42px;
+  height: 22px;
+  background-color: rgba(255, 118, 117, 0.25);
+  border: 1px solid rgba(255, 118, 117, 0.5);
+  border-radius: 20px;
+  transition: all 0.25s ease;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.military-switch-slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #ff7675;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.military-switch input:checked + .military-switch-slider {
+  background-color: rgba(46, 204, 113, 0.25);
+  border-color: rgba(46, 204, 113, 0.6);
+}
+
+.military-switch input:checked + .military-switch-slider::before {
+  transform: translateX(20px);
+  background-color: #2ecc71;
+  box-shadow: 0 0 6px rgba(46, 204, 113, 0.7);
+}
+
+.military-switch-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  min-width: 55px;
+  text-align: left;
+}
+
+.military-switch-label.active {
+  color: #2ecc71;
+}
+
+.military-switch-label.inactive {
+  color: #ff7675;
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .military-card {
+    padding: 24px;
+  }
+  .page-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .military-container {
+    padding: 16px;
+  }
+  .table-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-wrapper {
+    max-width: 100%;
+  }
+  .military-table th, 
+  .military-table td {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+}
+
+/* ==========================================================================
+   APP LAYOUT & SIDEBAR
+   ========================================================================== */
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 280px;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transition: transform var(--transition-normal);
+}
+
+.sidebar-header {
+  padding: 24px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(114, 47, 55, 0.15);
+}
+
+.sidebar-logo {
+  color: var(--accent-gold);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sidebar-logo span {
+  color: #fff;
+}
+
+.sidebar-subtitle {
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.sidebar-menu {
+  flex: 1;
+  padding: 20px 14px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.menu-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 20px 0 8px 10px;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  margin-bottom: 4px;
+}
+
+.menu-link svg {
+  font-size: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.menu-link:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.menu-link:hover svg {
+  transform: translateX(3px);
+}
+
+.menu-link.active {
+  color: #000;
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-hover));
+  box-shadow: 0 4px 12px rgba(226, 185, 59, 0.3);
+}
+
+.menu-link.active svg {
+  color: #000;
+}
+
+.menu-link.logout-link:hover {
+  background: var(--danger-bg);
+  color: #ff7675;
+}
+
+.app-content {
+  margin-left: 280px;
+  flex: 1;
+  min-height: 100vh;
+  background: var(--bg-secondary);
+  transition: margin-left var(--transition-normal);
+  padding: 30px;
+}
+
+/* Mobile Topbar */
+.mobile-topbar {
+  display: none;
+  background: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border-color);
+  padding: 14px 20px;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.mobile-topbar-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.menu-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--accent-gold);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay for Mobile Sidebar */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 95;
+}
+
+/* Responsive Menu Rules */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .sidebar-overlay.open {
+    display: block;
+  }
+  
+  .app-content {
+    margin-left: 0;
+    padding: 20px 16px;
+  }
+  
+  .mobile-topbar {
+    display: flex;
+  }
+}
+
+/* ==========================================================================
+   TACTICAL DEVOLUCIONES MODAL STYLES
+   ========================================================================== */
+
+.tactical-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(40, 15, 20, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tactical-modal {
+  background: var(--card-bg-solid);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 520px;
+  box-shadow: var(--shadow-lg), var(--glow-gold);
+  overflow: hidden;
+  position: relative;
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tactical-modal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--danger), var(--accent-gold), var(--success));
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tactical-modal-header {
+  padding: 24px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(114, 47, 55, 0.15);
+}
+
+.tactical-modal-title {
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tactical-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 20px;
+  cursor: pointer;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.tactical-modal-close:hover {
+  color: var(--danger);
+  transform: scale(1.1);
+}
+
+.tactical-modal-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tactical-info-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.tactical-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tactical-info-label {
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.tactical-info-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Progress bar styled */
+.tactical-progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tactical-progress-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tactical-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-gold), var(--success));
+  border-radius: 5px;
+  transition: width var(--transition-normal);
+}
+
+.tactical-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* Quick pills selector */
+.tactical-pills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tactical-pills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.tactical-pill-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.tactical-pill-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.3);
+  color: var(--accent-gold);
+}
+
+.tactical-pill-btn.active {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: var(--accent-gold);
+  color: var(--text-primary);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+/* Input custom labels/icons override */
+.tactical-input-icon {
+  position: absolute;
+  left: 18px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.tactical-modal-footer {
+  padding: 20px 24px;
+  border-top: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* ============================================================================== PROGRESS BAR – ESTILO MILITAR ============================================================================== */
+progress {
+  width: 100%;
+  height: 8px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-sidebar);           /* fondo oscuro tipo barrera */
+  accent-color: var(--accent-gold);        /* barra dorada, color institucional */
+}
+progress::-webkit-progress-bar {
+  background: var(--bg-sidebar);
+  border-radius: var(--radius-sm);
+}
+progress::-webkit-progress-value {
+  background: var(--accent-gold);
+  border-radius: var(--radius-sm);
+}
+progress::-moz-progress-bar {
+  background: var(--accent-gold);
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   COMPREHENSIVE RESPONSIVE LAYOUT ENHANCEMENTS
+   ========================================================================== */
+
+/* Prevenir saltos de línea inoportunos en botones de acción y celdas clave en desktop */
+.military-table td {
+  white-space: nowrap;
+}
+
+.action-buttons {
+  flex-wrap: nowrap !important;
+}
+
+/* Grilla dinámica y responsiva para selección de materiales */
+.materials-row {
+  display: grid;
+  grid-template-columns: 1fr 180px 48px;
+  gap: 16px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.materials-row .delete-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Ajustes responsivos globales para pantallas medianas (tabletas <= 768px) */
+@media (max-width: 768px) {
+  .military-container {
+    padding: 16px;
+  }
+
+  .military-card {
+    padding: 24px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .page-header {
+    margin-bottom: 24px;
+  }
+
+  .page-logo-container {
+    width: 64px;
+    height: 64px;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+  }
+
+  .table-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .search-wrapper {
+    max-width: 100%;
+  }
+
+  .date-filter-wrapper {
+    width: 100%;
+  }
+
+  .date-filter-wrapper .input-icon-wrapper,
+  .date-filter-wrapper input {
+    width: 100% !important;
+  }
+
+  /* Ajustar botones de reportes y controles generales */
+  .table-controls button,
+  .table-controls .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Ajustes responsivos para pantallas pequeñas (móviles <= 600px) */
+@media (max-width: 600px) {
+  .materials-row {
+    grid-template-columns: 1fr 48px;
+    gap: 12px;
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .materials-row .input-icon-wrapper {
+    grid-column: 1;
+  }
+
+  .materials-row .military-input {
+    grid-column: 1;
+  }
+
+  .materials-row .delete-btn {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 100%;
+    height: 100%;
+    align-self: stretch;
+  }
+
+  /* Modal táctico adaptado a pantallas táctiles */
+  .tactical-modal {
+    margin: 12px;
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+    border-radius: var(--radius-md);
+  }
+
+  .tactical-modal-header {
+    padding: 16px;
+  }
+
+  .tactical-modal-title {
+    font-size: 16px;
+  }
+
+  .tactical-modal-body {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .tactical-info-box {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .tactical-modal-footer {
+    padding: 16px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tactical-modal-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Ajustar los campos de entrada y botones generales */
+  .military-form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .badge {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
+
+/* Ajustes finos para dispositivos muy pequeños (<= 380px) */
+@media (max-width: 380px) {
+  .mobile-topbar-title {
+    font-size: 14px;
+  }
+
+  .sidebar-header {
+    padding: 16px 12px;
+  }
+
+  .sidebar-logo {
+    font-size: 16px;
+  }
+}
